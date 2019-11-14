@@ -47,13 +47,8 @@ public class RepositorioArray implements Repositorio {
         return fornecedor;
     }
 
-    @Override
-    public boolean exixte(String cnpj) {
-        int i = this.getIndice(cnpj);
-
-        return(i != this.index);
-    }
-
+   
+   
     @Override
     public void cadastrar(Fornecedor fornecedor) throws FornecedorJaCadastradoException {
 
@@ -77,4 +72,19 @@ public class RepositorioArray implements Repositorio {
             this.fornecedor[i] = fornecedor;
         }
     }
+   @Override
+	public boolean existe(String cnpj) {
+	  boolean teste = false;
+	  int i = 0;
+	  while (i < this.index && teste == false) {
+		 if(fornecedor[i].getCnpj().equals(cnpj)) {
+			teste = true;
+		 }else {
+			 i++;
+		 }
+		 
+	  }
+	 return teste;
+		
+	}
 }

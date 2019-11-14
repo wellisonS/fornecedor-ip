@@ -32,8 +32,18 @@ public class RepositorioLista implements Repositorio{
     }
 
     @Override
-    public boolean exixte(String cnpj) {
-        return false;
+    public boolean existe(String cnpj) {
+    	if(this.fornecedor != null)	{
+    		if(this.fornecedor.getCnpj().equals(cnpj)) {
+    			return true;
+    		} else {
+    		return	this.proximo.existe(cnpj);
+    		}
+    	} else {
+    		return false;
+    	}
+    	
+       
     }
 
     @Override

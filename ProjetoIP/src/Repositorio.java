@@ -3,7 +3,7 @@ public interface Repositorio {
     public void atualizar (Fornecedor fornecedor) throws FornecedorNaoEncontradoException;
     public void cadastrar (Fornecedor fornecedor) throws FornecedorJaCadastradoException;
     public Fornecedor procurar (String dados) throws FornecedorNaoEncontradoException;
-    public boolean exixte (String cnpj);
+    public boolean existe (String cnpj);
 
 
 }
